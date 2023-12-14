@@ -1,0 +1,12 @@
+{
+  "name": "mern-jwt-redux",
+  "version": "1.0.0",
+  "description": "First project with JWT and Redux! This will also be styled with TailindCSS which will serve as reinforcement for the basics as it is by far my most used css framework!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
