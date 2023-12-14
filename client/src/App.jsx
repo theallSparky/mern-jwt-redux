@@ -1,3 +1,13 @@
+/* eslint-disable no-unused-vars */
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+
 export default function App() {
-  return <div className="text-red-500">App</div>;
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={Home}></Route>
+      </Routes>
+    </BrowserRouter>
+  );
 }
