@@ -28,9 +28,9 @@ export default function SignUp() {
         body: JSON.stringify(formData),
       });
       const data = await res.json();
-      setLoading(false);
+      dispatch(signInSuccess(data));
       if (data.success === false) {
-        setError(true);
+        dispatch(signInFailure());
         return;
       }
       navigate("/sign-in");
