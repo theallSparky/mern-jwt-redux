@@ -11,7 +11,7 @@ export const signup = async (req, res, next) => {
     await newUser.save();
     res.status(201).json({ message: "User created successfully!" });
     res
-      .cookies("access_token", token, { httpOnly: true })
+      .cookie("access_token", token, { httpOnly: true })
       .status(200)
       .json(validUser); // httpOnly disllows 3rd party applications from modifying the cookie
   } catch (error) {
