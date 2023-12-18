@@ -5,18 +5,21 @@ import {
   signInSuccess,
   signInFailure,
 } from "../redux/user/userSlice";
+import { useDispatch } from "react-redux";
 
 export default function SignIn() {
   const [formData, setFormData] = useState({});
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.id]: e.target.value });
   };
   const handleSubmit = async (e) => {
     e.preventDefault(); // Prevents the page from reloading upon form submit
     try {
+      dispatch(signInStart());
       const res = await fetch("/api/auth/signin", {
         method: "POST",
         headers: {
