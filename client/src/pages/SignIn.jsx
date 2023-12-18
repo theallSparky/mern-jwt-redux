@@ -35,7 +35,7 @@ export default function SignIn() {
       }
       navigate("/");
     } catch (error) {
-      dispatch(signInFailure());
+      dispatch(signInFailure(error));
     }
   };
 
