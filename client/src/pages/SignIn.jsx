@@ -28,7 +28,7 @@ export default function SignIn() {
       });
       const data = await res.json();
       if (data.success === false) {
-        dispatch(signInFailure(data.message));
+        dispatch(signInFailure(data));
         return;
       }
       dispatch(signInSuccess(data));
@@ -70,7 +70,7 @@ export default function SignIn() {
         </Link>
       </div>
       <p className="text-red-700 mt-5">
-        {error ? error || "Something went wrong" : ""}
+        {error ? error.message || "Something went wrong" : ""}
       </p>
     </div>
   );
