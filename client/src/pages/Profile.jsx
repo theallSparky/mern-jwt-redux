@@ -9,7 +9,7 @@ export default function Profile() {
         <img
           src={currentUser.profilePicture}
           alt="profile"
-          className="h-24 w-24 self-center cursor-pointer"
+          className="h-24 w-24 self-center cursor-pointer object-cover rounded-full"
         />
       </form>
     </div>
