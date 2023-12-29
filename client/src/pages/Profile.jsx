@@ -34,6 +34,10 @@ export default function Profile() {
         <button className="bg-slate-700 p-3 rounded-lg uppercase hover:opacity-90 disabled:opacity-80">
           Update
         </button>
+        <div className="flex justify-between mt-5">
+          <span className="text-red-700 cursor-pointer">Delete Account</span>
+          <span className="text-red-700 cursor-pointer">Sign Out</span>
+        </div>
       </form>
     </div>
   );
