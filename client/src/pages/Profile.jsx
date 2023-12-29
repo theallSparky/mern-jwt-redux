@@ -9,12 +9,26 @@ export default function Profile() {
         <img
           src={currentUser.profilePicture}
           alt="profile"
-          className="h-24 w-24 self-center cursor-pointer object-cover rounded-full"
+          className="h-24 w-24 self-center cursor-pointer object-cover rounded-full mt-2"
         />
         <input
+          defaultValue={currentUser.username}
           type="text"
           id="username"
           placeholder="Username"
+          className="bg-slate-100 rounded-l p-3"
+        />
+        <input
+          defaultValue={currentUser.email}
+          type="email"
+          id="email"
+          placeholder="Email"
+          className="bg-slate-100 rounded-l p-3"
+        />
+        <input
+          type="password"
+          id="password"
+          placeholder="Password"
           className="bg-slate-100 rounded-l p-3"
         />
       </form>
