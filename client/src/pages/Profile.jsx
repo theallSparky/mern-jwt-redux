@@ -8,7 +8,7 @@ export default function Profile() {
     <div className="p-3 max-w-lg mx-auto">
       <h1 className="text-3xl font-weight-600 text-center my-7">Profile</h1>
       <form className="flex flex-col gap-4">
-        <input type="file" ref={fileRef} hidden accept="image" />
+        <input type="file" ref={fileRef} hidden accept="image/*" />
         <img
           src={currentUser.profilePicture}
           alt="profile"
