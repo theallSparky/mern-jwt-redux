@@ -15,7 +15,6 @@ export default function Profile() {
   const [imagePercent, setImagePercent] = useState(0);
   const [imageError, setImageError] = useState(false);
   const [formData, setFormData] = useState({});
-  console.log(formData);
   useEffect(() => {
     if (image) {
       handleFileUpload(image);
@@ -60,6 +59,19 @@ export default function Profile() {
           className="h-24 w-24 self-center cursor-pointer object-cover rounded-full mt-2"
           onClick={() => fileRef.current.click()}
         />
+        <p>
+          {imageError ? (
+            <span className="text-red-700">Error uploading image</span>
+          ) : imagePercent > 0 && imagePercent < 100 ? (
+            <span className="text-slate-700">{`Uploading: ${imagePercent}% done! :)`}</span>
+          ) : imagePercent === 100 ? (
+            <span className="text-green-700">
+              Image uploaded successfully :D
+            </span>
+          ) : (
+            ""
+          )}
+        </p>
         <input
           defaultValue={currentUser.username}
           type="text"
