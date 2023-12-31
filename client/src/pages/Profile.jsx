@@ -59,9 +59,11 @@ export default function Profile() {
           className="h-24 w-24 self-center cursor-pointer object-cover rounded-full mt-2"
           onClick={() => fileRef.current.click()}
         />
-        <p>
+        <p className="text-sm self-center">
           {imageError ? (
-            <span className="text-red-700">Error uploading image</span>
+            <span className="text-red-700">
+              Error uploading image (file size must be less than 2 MB){" "}
+            </span>
           ) : imagePercent > 0 && imagePercent < 100 ? (
             <span className="text-slate-700">{`Uploading: ${imagePercent}% done! :)`}</span>
           ) : imagePercent === 100 ? (
