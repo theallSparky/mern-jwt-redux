@@ -80,6 +80,7 @@ export default function Profile() {
           id="username"
           placeholder="Username"
           className="bg-slate-100 rounded-l p-3"
+          onChange={handleChange}
         />
         <input
           defaultValue={currentUser.email}
@@ -87,12 +88,14 @@ export default function Profile() {
           id="email"
           placeholder="Email"
           className="bg-slate-100 rounded-l p-3"
+          onChange={handleChange}
         />
         <input
           type="password"
           id="password"
           placeholder="Password"
           className="bg-slate-100 rounded-l p-3"
+          onChange={handleChange}
         />
         <button className="bg-slate-700 p-3 rounded-lg uppercase hover:opacity-90 disabled:opacity-80">
           Update
