@@ -66,6 +66,7 @@ export default function Profile() {
       const data = res.json();
       if (data.success === false) {
         dispatch(updateUserFailure(data));
+        return;
       }
       dispatch(updateUserSuccess(data));
     } catch (error) {
