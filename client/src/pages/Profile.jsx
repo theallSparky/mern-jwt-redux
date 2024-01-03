@@ -15,7 +15,7 @@ import {
 } from "../redux/user/userSlice.js";
 
 export default function Profile() {
-  const { currentUser } = useSelector((state) => state.user);
+  const { currentUser, loading, error } = useSelector((state) => state.user);
   const fileRef = useRef(null);
   const [image, setImage] = useState(undefined);
   const [imagePercent, setImagePercent] = useState(0);
@@ -131,11 +131,11 @@ export default function Profile() {
         <button className="bg-slate-700 p-3 rounded-lg uppercase hover:opacity-90 disabled:opacity-80">
           Update
         </button>
-        <div className="flex justify-between mt-5">
-          <span className="text-red-700 cursor-pointer">Delete Account</span>
-          <span className="text-red-700 cursor-pointer">Sign Out</span>
-        </div>
       </form>
+      <div className="flex justify-between mt-5">
+        <span className="text-red-700 cursor-pointer">Delete Account</span>
+        <span className="text-red-700 cursor-pointer">Sign Out</span>
+      </div>
     </div>
   );
 }
