@@ -15,8 +15,8 @@ import {
   deleteUserStart,
   deleteUserSuccess,
   deleteUserFailure,
+  signOut,
 } from "../redux/user/userSlice.js";
-import { deleteUser } from "firebase/auth";
 
 export default function Profile() {
   const { currentUser, loading, error } = useSelector((state) => state.user);
@@ -95,6 +95,15 @@ export default function Profile() {
       dispatch(deleteUserFailure(error));
     }
   };
+
+  const handleSignout = async () => {
+    try {
+      await fetch(`/api/user/signout`);
+      dispatch(signOut());
+    } catch (error) {
+      console.log(error);
+    }
+  };
   return (
     <div className="p-3 max-w-lg mx-auto">
       <h1 className="text-3xl font-weight-600 text-center my-7">Profile</h1>
@@ -161,7 +170,9 @@ export default function Profile() {
         >
           Delete Account
         </span>
-        <span className="text-red-700 cursor-pointer">Sign Out</span>
+        <span onClick={handleSignout} className="text-red-700 cursor-pointer">
+          Sign Out
+        </span>
       </div>
       <p className="text-red-700 mt-5">{error && "Something went wrong!"}</p>
       <p className="text-green-700 mt-5">

@@ -84,5 +84,5 @@ export const signout = (req, res) => {
   res
     .clearCookie("access_token")
     .status(200)
-    .json({ message: "Signout success! " });
+    .json({ message: "Signout success!" });
 };
