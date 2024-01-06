@@ -16,7 +16,11 @@ export default function Home() {
         Express, and uses MongoDb as the database. Authentication is implemented
         usig JSON Web Tokens (JWT)!
       </p>
-      <p className="mb-4 text-slate-700"></p>
+      <p className="mb-4 text-slate-700">
+        This application is intended as a starting point for building full-stack
+        web applications with the MERN stack. Please, feel free to use it as a
+        template for your own projects.
+      </p>{" "}
     </div>
   );
 }
